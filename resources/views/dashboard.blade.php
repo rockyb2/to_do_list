@@ -12,6 +12,11 @@
                     {{ __("You're logged in!") }}
                 </div>
             </div>
+            <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <a href="{{ route('taches.index') }}" class="text-blue-500 hover:underline">
+                        {{ __('Retour à la page d\'accueil') }}
+                    </a>
+                </div>
         </div>
     </div>
 </x-app-layout>

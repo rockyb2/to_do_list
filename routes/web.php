@@ -4,11 +4,15 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TacheController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [TacheController::class, 'index'])->name('home');
 
-Route::resource('taches', TacheController::class)->middleware('auth');
+Route::get('taches/today', [TacheController::class, 'today'])->name('taches.today');
+
+Route::resource('taches', TacheController::class);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

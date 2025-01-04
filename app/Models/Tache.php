@@ -15,6 +15,7 @@ class Tache extends Model
         'titre',
         'description',
         'statut',
+        'priorite',
         'date_limite',
     ];
 

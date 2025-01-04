@@ -19,6 +19,12 @@ class TacheController extends Controller
         return view('taches.create');
    }
 
+   public function today(){
+    $today= now()->toDateString();
+    $taches = Tache::where('date_limite', $today)->get();
+    return view('taches.today',compact('taches'));
+   }
+
    public function show(Tache $tache)
    {
         return view('taches.show', compact('tache'));
